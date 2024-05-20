@@ -1,0 +1,20 @@
+{
+  "name": "Bubik Live",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Bubik Live",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": ["webNavigation", "activeTab", "userScripts", "webRequest"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["https://www.bubik.live/*"]
+}
